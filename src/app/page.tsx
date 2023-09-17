@@ -1,26 +1,16 @@
-import Form from "./form"
-import prisma from "./lib/db";
+import Counter from "./components/counter"; 
 
-async function getTodos( ) {
-  const todo = await prisma.todos.findMany();
-  return todo;
+function page() {
 
-}
-
-async function page() {
-
-  const Todos= await getTodos();
-  console.log(Todos)
-
+  
   return (
     <main className="flex flex-col">
-      <Form todos={Todos}></Form>
+      <Counter></Counter>
     </main>
   )
 }
 
 export default page
-
 
 
 
